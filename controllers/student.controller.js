@@ -45,3 +45,40 @@ exports.findAll = (req, res)=>{
         });
     });
 };
+//Delete a Student with the specified id in the request
+exports.delete = (req, res)=>{
+    const id = req.params.id;
+       Student.findByIdAndRemove(id)
+        .then(data =>{
+            if (data) {
+                res.status(404).send({
+                    message: `Cannot elete Student with id=${id}. Maybe Student was not found !`,
+                });
+            }else{
+                res.send({
+                    message: "Student was delete successfully!",
+                });
+            }
+                
+        })
+        .catch(err=>{
+            res.status(500).send({
+            message:"Could not delete Student with id =" + id,
+            });
+        });
+};
+//Delete all Students from the database.
+exports.deleteAll = (req, res)=>{
+       Student.deleteMany({})
+        .then(data =>{
+                res.send({
+                    message:`${data.deletedCount} Students were deleted successfully !`,
+                });        
+        })
+        .catch(err=>{
+            res.status(500).send({
+                message:
+                err.message || "Some error occured while removing all students.",
+            });
+        });
+};
