@@ -8,9 +8,12 @@ const PORT = process.env.PORT || 4002;
 
 const db = require("./models");
 
-//app.use(bodyParser.urlencoded({ extended: true }));
+const bodyParser = require("body-parser");
+app.use(bodyParser.json());
 
-db.mongoose
+app.use(bodyParser.urlencoded({ extended: true }));
+
+db.mongoose 
   .connect(db.url)
   .then(() => {
     console.log(`Connected to the database '${db.url}' !`);
