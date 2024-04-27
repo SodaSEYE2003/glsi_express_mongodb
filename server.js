@@ -12,6 +12,7 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
+require("./routes/student.routes")(app);
 
 db.mongoose 
   .connect(db.url)
@@ -24,6 +25,7 @@ db.mongoose
   });
 
 app.use(logger("dev"));
+require("./routes/student.routes")(app);
 
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to glsi students application." });

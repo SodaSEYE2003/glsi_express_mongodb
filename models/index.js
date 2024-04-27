@@ -2,6 +2,9 @@ const dbConfig = require("../config/db.config.js");
 
 const mongoose = require("mongoose");
 
+/*const express = require("express");
+const app = express();
+require("../routes/student.routes.js")(app);*/
 mongoose.Promise = global.Promise;
 
 const db = {};
