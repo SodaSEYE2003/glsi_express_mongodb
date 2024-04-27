@@ -82,7 +82,7 @@ exports.deleteAll = (req, res)=>{
             });
         });
 };
-/*// Find all registered Students
+// Find all registered Students
 exports.findAllRegistered = (req, res) => {
     Student.find({ registered: true })
       .then(data => {
