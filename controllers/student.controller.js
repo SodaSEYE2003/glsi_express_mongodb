@@ -82,7 +82,7 @@ exports.deleteAll = (req, res)=>{
             });
         });
 };
-// Find all registered Students
+/*// Find all registered Students
 exports.findAllRegistered = (req, res) => {
     Student.find({ registered: true })
       .then(data => {
@@ -115,7 +115,7 @@ exports.findAllRegistered = (req, res) => {
   
   
   // Update a Student by the id in the request
-  exports.update = (req, res) => {
+ /* exports.update = (req, res) => {
     if (!req.body) {
       return res.status(400).send({
         message: "Data to update can not be empty!",
@@ -135,5 +135,5 @@ exports.findAllRegistered = (req, res) => {
           message: "Error updating Student with id=" + id,
         });
       });
-  };
+  };*/
   

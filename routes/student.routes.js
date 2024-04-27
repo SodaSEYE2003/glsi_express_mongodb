@@ -14,12 +14,12 @@ module.exports = app => {
   //Delete all Student 
   router.delete("/", students.deleteAll);
 
-  // Retrieve all registered Students
+  /*// Retrieve all registered Students
   router.get("/registered", students.findAllRegistered);
 
 
   // Retrieve a single Student with id
-  router.get("/:id", students.findOne);
+  router.get("/:id", students.findOne);*/
 
 
   // Update a Student with id
