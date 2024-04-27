@@ -23,7 +23,7 @@ module.exports = app => {
 
 
   // Update a Student with id
- // router.put("/:id", students.update);
+  router.put("/:id", students.update);
 
   app.use("/api/students", router);
 
